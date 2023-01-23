@@ -1,2 +1,29 @@
-# udem2
-a whole sum basic project which includes db also under the guidance of mashrur (udemy lecturer).
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...<p class="btn btn-outline-success" ><%= link_to 'show', user_path(article) %></p>
+			<p class="btn btn-outline-info"> <%= link_to 'Edit', edit_user_path(article) %></p>
+			<p class="btn btn-outline-danger"><%= link_to 'delete', user_path(article), data:{
+				turbo_method: :delete,
+				turbo_confirm: "Are you sure?"
+			} %></p>

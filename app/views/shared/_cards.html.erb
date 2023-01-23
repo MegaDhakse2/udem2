@@ -1,0 +1,22 @@
+<% @article.each do |article| %>
+	<div class="container" id="card">
+		<div class="row justify-content-md-center">
+		<div class="col-8 mt-4">
+	    <div class="card text-center shadow p-3 mb-5 bg-white rounded">
+
+	     <div class="card-header">
+		<p>Article <%= article.user.username if article.user %></p>
+	    </div>
+
+	  <div class="card-body">
+		<h5 class="card-title"><%=article.title%></h5>
+		<p class="card-text"> <%=article.author%><br>With supporting text below as a natural lead-in to additional content.</p>
+
+
+
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<%end%>
