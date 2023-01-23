@@ -1,0 +1,4 @@
+<% @user.each do |j|%>
+<%= j.username%>
+<%= link_to 'show', user_path(j) %>
+<%end%>

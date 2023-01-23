@@ -1,0 +1,8 @@
+<h1 class="text-center mt-4">Edit profile</h1>
+
+<%= render 'shared/form_user' %>
+
+<%= link_to 'delete this account', user_path(@user), data:{
+			 turbo_method: :delete,
+			turbo_confirm: "Are you sure?"
+		  } %>

@@ -1,0 +1,39 @@
+<div class="container" id="new-form">
+<div  class="row  justify-content-center">
+<div class="col-10	">
+
+<%= form_with model: @article do |form| %>
+  <div class="mb-3" >
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class:"form-control" %>
+    <% @article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3" >
+   <%= form.label :author %><br>
+    <%= form.text_field :author, class:"form-control" %>
+    <% @article.errors.full_messages_for(:author).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3" >
+    <%= form.label :body %><br>
+    <%= form.text_area :body, class:"form-control" %><br>
+    <% @article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class= "d-grid gap-2 col-4 mx-auto">
+    <%= form.submit(@article.new_record? ? "Add Article" : "Update Article", class: "btn btn-info" ) %>
+  </div>
+<% end %>
+
+</div>
+</div>
+</div>
+
+</div>
