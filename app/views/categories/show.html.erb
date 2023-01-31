@@ -1,0 +1,11 @@
+<div class="main-heading">
+<h1 class="text-white text-center"> Category: <%=@category.name%> </h1><br>
+</div>
+
+
+
+<div class="secondary-heading">
+<h2 class="text-warning text-center"> Articles</h2>
+</div>
+
+<%= render 'shared/cards', obj: @category.articles %>

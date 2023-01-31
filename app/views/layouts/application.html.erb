@@ -11,10 +11,17 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+	  <%# <link rel="icon" type="image/x-icon" href="login.png"> %>
+
   </head>
 
   <body>
-	<div class="">
+	<div class="whole">
+
+		<%= render partial: 'shared/head'%>
+		<%= render partial: 'shared/navbar' %>
+		<%= render partial: 'shared/flash' %>
     <%= yield %>
 	<%= render 'layouts/footer' %>
 	</div>

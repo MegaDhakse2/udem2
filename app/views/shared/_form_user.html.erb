@@ -1,10 +1,8 @@
 
 
-<div class="container">
+<div class="container text-white">
 <div  class="row justify-content-center">
-
-
-<div class="col-7">
+<div class="col-4">
 <%= form_with model: @user do |form| %>
 
 <div class="mb-5">
@@ -21,7 +19,7 @@
       <div><%= message %></div>
     <% end %>
   </div>
-<div class="mb-5">
+<div class="mb-5 ">
   <%= form.label :password%>
   <%= form.password_field :password, class:"form-control" %>
   <% @user.errors.full_messages_for(:password).each do |message| %>
@@ -34,10 +32,10 @@
 	</div>
 
 <% end %>
-
+  <br><br><br>
 <%# <%= link_to '[Cancel signup and Go Back]', users_path %>
 
 </div>
 </div>
-
+</div>
 

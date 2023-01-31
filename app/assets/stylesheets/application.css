@@ -13,62 +13,23 @@
  *= require_tree .
  *= require_self
  */
- h1, small{
-	padding-left: 2%;
-	line-height: 20px;
+ .whole{
+	background-image: url(wholebacklap1.jpg);
+	background-position: center ;
+	background-repeat: no-repeat;
+	background-size: cover;
  }
- .form-head{
-	padding: 2%;
-	color: blueviolet;
-}
 
- .header{
-	background-color: aqua;
-	/* background-image: url(home.png); */
-	width: 100%;
-	padding-top: 3%;
 
- }
-footer{
-	padding: 3%;
-	text-align: center;
-	vertical-align: end;
-	background-color: darkslategray;
-	color: antiquewhite;
-	margin-top: 20%;
-}
 .container-fluid{
 	background-color: rgb(175, 189, 216);
-	padding: 4px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
-	border-bottom:dotted 2px ;
 }
-.nav-links{
-	color:antiquewhite;
-	text-decoration: none;
-}
-
- #navbarDropdown{
-	color:rgb(12, 7, 1);
-	text-decoration: none;
- }
 
 .nav-links:hover{
 	color: chartreuse;
 }
 .nav-bot{
-	word-spacing: 40px;
-
-}
-.align-items-center{
-	padding: 5%;
-	padding-left: 30%;
-	width: 70%;
-	align-items: center;
+	word-spacing: 15px;
 }
 
 .jumbotron{
@@ -77,13 +38,7 @@ footer{
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: antiquewhite;
-	/* border-radius: 20px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	-ms-border-radius: 20px;
-	-o-border-radius: 20px; */
 	padding: 10%;
-	text-align: right;
 }
 .lead{
 	font-weight: 300;
@@ -99,20 +54,10 @@ footer{
 	background-color: darkcyan;
 }
 
-#btn{
-	text-decoration: none;
-}
-center{
-	color: rgb(37, 126, 210);
-	font-size: 50px;
-	font-weight: 400;
-	font-family: monospace;
-	font-style: italic;
-	padding: 2%;
-}
+
 
 .form-control{
-	border: dotted 2px;
+	border:  2px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -122,11 +67,51 @@ center{
 }
 #new-form{
 	background-color: rgb(161, 214, 196);
-	padding: 2%;
-	width: 70%;
-	border-radius: 5px;
+	opacity: 90%;
+	padding: 5%;
+
+	/*width: 70%;  defined in class as bootstrap element w-70
+	*/border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
+	/* -webkit-backface-visibility: visible; */
 }
+
+/*pagination sassy css*/
+.flickr_pagination {
+	text-align: center;
+	padding: 0.3em;
+	cursor: default; }
+	.flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+	  padding: 0.2em 0.5em; }
+	.flickr_pagination .disabled {
+	  color: #53b0ea; }
+	.flickr_pagination .current {
+	  font-style: normal;
+	  font-weight: bold;
+	  color: #350c22; }
+	.flickr_pagination a {
+	  border: 1px solid #dddddd;
+	  border-radius: 7px;
+	  color: #d7dfe8;
+	  text-decoration: none;
+	  -webkit-border-radius: 7px;
+	  -moz-border-radius: 7px;
+	  -ms-border-radius: 7px;
+	  -o-border-radius: 7px;
+}
+	  .flickr_pagination a:hover, .flickr_pagination a:focus {
+		border-color: #c3d1df;
+		background: #c3c7cc;
+		color: rgb(15, 6, 6); }
+	.flickr_pagination .page_info {
+	  color: #aaaaaa;
+	  padding-top: 0.8em; }
+	.flickr_pagination .previous_page, .flickr_pagination .next_page {
+	  border-width: 2px; }
+	.flickr_pagination .previous_page {
+	  margin-right: 1em; }
+	.flickr_pagination .next_page {
+	  margin-left: 1em; }

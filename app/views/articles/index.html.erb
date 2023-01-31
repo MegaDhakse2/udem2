@@ -1,7 +1,16 @@
 
-<center>Articles</center>
+<%# <center class="text-center text-white">Articles</center> %>
+<h1 class="text-center mt-4 text-white">Articles</h1><br>
 
-	<%= render 'shared/cards' %>
+<div class="flickr_pagination">
+    <%= will_paginate @article, :container => false %>
+</div>
+<div class="container text-end">
+<%= link_to 'Create New Article', new_article_path, class:" btn btn-outline-warning" %>
+</div>
+<br>
+
+	<%= render 'shared/cards', obj: @article %>
 
 
 <div class="all">
@@ -35,5 +44,7 @@
 </div>
 
 </div>
-<%= link_to 'New Article', new_article_path %>
 
+<div class="flickr_pagination">
+    <%= will_paginate @article, :container => false %>
+</div>

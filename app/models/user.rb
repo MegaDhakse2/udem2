@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  has_secure_password
-  has_many :articles
   before_save { self.email = email.downcase }
+  has_many :articles, dependent: :destroy
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   PASSWORD_FORMAT =
     /\A
@@ -45,4 +44,5 @@ class User < ApplicationRecord
               with: PASSWORD_FORMAT
             }
   #,if: :method_name?
+  has_secure_password
 end

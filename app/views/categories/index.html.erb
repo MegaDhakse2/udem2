@@ -1,0 +1,40 @@
+<div class="container">
+
+<div class="main-head">
+<h1 class="text-center mt-4 text-white">Categories</h1><br>
+</div>
+
+
+
+<div class="flickr_pagination">
+    <%= will_paginate @categories, :container => false %>
+</div>
+<% @categories.each do |category| %>
+
+	<div class="container rounded" id="card">
+		<div class="row justify-content-md-center">
+		<div class="col-4 mt-4">
+	    <div class="card text-center shadow p-3 mb-5 bg-white rounded">
+
+	     <div class="card-header">
+		<%# <p> <%= user.username %></p>
+	    </div>
+
+	  <div class="card-body">
+		<h5 class="card-title "><%= link_to category.name, category_path(category), class:"text-decoration-none" %></h5>
+	    <small> Totally <strong><%= pluralize(category.articles.count, "article")%> </strong> are there in this category </small>
+	  </div>
+
+
+	</div>
+	</div>
+	</div>
+	</div>
+	<%end%>
+<div class="flickr_pagination">
+    <%= will_paginate @categories, :container => false %>
+</div>
+
+
+</div>
+

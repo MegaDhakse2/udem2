@@ -21,9 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...<p class="btn btn-outline-success" ><%= link_to 'show', user_path(article) %></p>
-			<p class="btn btn-outline-info"> <%= link_to 'Edit', edit_user_path(article) %></p>
-			<p class="btn btn-outline-danger"><%= link_to 'delete', user_path(article), data:{
-				turbo_method: :delete,
-				turbo_confirm: "Are you sure?"
-			} %></p>
+*

@@ -1,0 +1,31 @@
+<div class="container text-white w-70 p-5 ">
+
+<h1 class="text-center mt-4">Login</h1>
+
+
+<div  class="row justify-content-center ">
+<div class="col-4">
+
+<%= form_with(scope: :session, url: login_path) do |form| %>
+
+<div class="mb-5">
+	<%= form.label :username%>
+	<%= form.text_field :username, class:"form-control", placeholder: "enter your username" %>
+</div>
+
+<div class="mb-5">
+	<%= form.label :password%>
+	<%= form.password_field :password, class:"form-control", placeholder: "enter your password" %>
+</div>
+
+<div class="mb-5">
+	<%= form.submit "Login", class:"btn btn-primary"%>
+</div>
+<br>
+<br>
+<br>
+<br>
+<%end%>
+</div>
+</div>
+</div>

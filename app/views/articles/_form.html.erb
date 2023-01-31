@@ -1,4 +1,4 @@
-<div class="container" id="new-form">
+<div class="container w-55 " id="new-form">
 <div  class="row  justify-content-center">
 <div class="col-10	">
 
@@ -25,6 +25,11 @@
     <% @article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
+  </div>
+
+  <div class="mb-3" >
+    <%= form.label :Category %><br>
+    <%= form.collection_select(:variety_ids, Variety.all, :id, :name, { prompt: "Select the category of your article(optional)"}, {multiple: true,class:"form-control text-center"}) %>
   </div>
 
   <div class= "d-grid gap-2 col-4 mx-auto">

@@ -1,23 +1,33 @@
-<% @article.each do |article| %>
-	<div class="container" id="card">
+<% obj.each do |article| %>
+	<div class="container rounded" id="card">
 		<div class="row justify-content-md-center">
 		<div class="col-8 mt-4">
 	    <div class="card text-center shadow p-3 mb-5 bg-white rounded">
 
 	     <div class="card-header">
-		<p>Article <%= article.user.username if article.user %></p>
+		<%# <p>Article written by <i><strong><%= article.user.username if article.user %></strong> </i></p>
+		<p>Article written by <i><strong><%= article.user == current_user ? "you" : article.user.username %></strong> </i></p>
+         <% if article.varieties.any? %>
+            <div class="badge badge-pill badge-info">
+			<%= render article.varieties %>
+			</div>
+            <% end %>
 	    </div>
 
 	  <div class="card-body">
 		<h5 class="card-title"><%=article.title%></h5>
-		<p class="card-text"> <%=article.author%><br>With supporting text below as a natural lead-in to additional content.</p>
-         <p class="btn btn-outline-success" ><%= link_to 'show', article_path(article) %></p>
-			<p class="btn btn-outline-info"> <%= link_to 'Edit', edit_article_path(article) %></p>
-			<p class="btn btn-outline-danger"><%= link_to 'delete', article_path(article), data:{
+		<p class="card-text"><%= article.body%>
+		<p class="text-end"> -<%=article.author%></p>
+         <p class="btn btn-outline-success " ><%= link_to 'show', article_path(article), class:"text-decoration-none" %></p>
+		 <%if logged_in?  && (article.user == current_user || current_user.admin?) %>
+			<p class="btn btn-outline-info"> <%= link_to 'Edit', edit_article_path(article), class:"text-decoration-none" %></p>
+			<p class="btn btn-outline-danger"><%= link_to 'delete', article_path(article),
+			class:"text-decoration-none",
+			data:{
 				turbo_method: :delete,
 				turbo_confirm: "Are you sure?"
 			} %></p>
-
+     <%end%>
 
 	</div>
 	</div>

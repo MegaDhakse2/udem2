@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
+  before_action :user_security, except: %i[show index]
+  before_action :same_user_security, only: %i[edit update destroy]
   def index
-    @article = Article.all
+    @article = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -9,12 +11,18 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user_id = User.first.id
+    # @article.user_id = User.first.id
+    @article.user_id = session[:user_id]
     #@article.user = User.first
     if @article.save
       flash[:notice] = "Article was created successfully."
-      redirect_to articles_path
+      # redirect_to @article
+      redirect_to user_path(current_user)
     else
+      flash[
+        :error
+      ] = "Something went wrong please fill respective fields correctly"
+
       render "new", status: :unprocessable_entity
     end
   end
@@ -36,13 +44,21 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :author, :body, :user_id)
+    params.require(:article).permit(:title, :author, :body, variety_ids: [])
+  end
+
+  def same_user_security
+    @article = Article.find(params[:id])
+    if current_user != @article.user && !current_user.admin?
+      redirect_to @article
+    end
   end
 end
